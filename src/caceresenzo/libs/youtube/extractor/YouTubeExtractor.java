@@ -553,14 +553,16 @@ public abstract class YouTubeExtractor {
 	}
 	
 	private void parseVideoMeta(String getVideoInfo) throws UnsupportedEncodingException {
-		boolean isLiveStream = false;
 		String title = null, author = null, channelId = null;
 		long viewCount = 0, length = 0;
+		boolean isLiveStream = false;
 		
 		Matcher matcher = patTitle.matcher(getVideoInfo);
 		if (matcher.find()) {
 			title = URLDecoder.decode(matcher.group(1), "UTF-8");
 		}
+		
+		Logger.info(">> " + getVideoInfo);
 		
 		matcher = patHlsvp.matcher(getVideoInfo);
 		if (matcher.find()) {
@@ -587,7 +589,7 @@ public abstract class YouTubeExtractor {
 			viewCount = Long.parseLong(matcher.group(1));
 		}
 		
-		videoMeta = new VideoMeta(videoId, title, author, channelId, length, viewCount, isLiveStream);
+		videoMeta = new VideoMeta(videoId, title, null, author, channelId, length, viewCount, isLiveStream);
 	}
 	
 	private void readDecipherFunctFromCache() {
