@@ -9,6 +9,8 @@ public class YoutubeFormat {
 	
 	public static final SparseArray<YoutubeFormat> FORMAT_MAP = new SparseArray<>();
 	
+	public static final String WEBM = "webm";
+	
 	static {
 		// http://en.wikipedia.org/wiki/YouTube#Quality_and_formats
 		
@@ -16,7 +18,7 @@ public class YoutubeFormat {
 		FORMAT_MAP.put(17, new YoutubeFormat(17, "3gp", 144, VideoCodec.MPEG4, AudioCodec.AAC, 24, false));
 		FORMAT_MAP.put(36, new YoutubeFormat(36, "3gp", 240, VideoCodec.MPEG4, AudioCodec.AAC, 32, false));
 		FORMAT_MAP.put(5, new YoutubeFormat(5, "flv", 240, VideoCodec.H263, AudioCodec.MP3, 64, false));
-		FORMAT_MAP.put(43, new YoutubeFormat(43, "webm", 360, VideoCodec.VP8, AudioCodec.VORBIS, 128, false));
+		FORMAT_MAP.put(43, new YoutubeFormat(43, WEBM, 360, VideoCodec.VP8, AudioCodec.VORBIS, 128, false));
 		FORMAT_MAP.put(18, new YoutubeFormat(18, "mp4", 360, VideoCodec.H264, AudioCodec.AAC, 96, false));
 		FORMAT_MAP.put(22, new YoutubeFormat(22, "mp4", 720, VideoCodec.H264, AudioCodec.AAC, 192, false));
 		
@@ -38,26 +40,26 @@ public class YoutubeFormat {
 		FORMAT_MAP.put(141, new YoutubeFormat(141, "m4a", VideoCodec.NONE, AudioCodec.AAC, 256, true));
 		
 		/* WEBM Dash Video */
-		FORMAT_MAP.put(278, new YoutubeFormat(278, "webm", 144, VideoCodec.VP9, AudioCodec.NONE, true));
-		FORMAT_MAP.put(242, new YoutubeFormat(242, "webm", 240, VideoCodec.VP9, AudioCodec.NONE, true));
-		FORMAT_MAP.put(243, new YoutubeFormat(243, "webm", 360, VideoCodec.VP9, AudioCodec.NONE, true));
-		FORMAT_MAP.put(244, new YoutubeFormat(244, "webm", 480, VideoCodec.VP9, AudioCodec.NONE, true));
-		FORMAT_MAP.put(247, new YoutubeFormat(247, "webm", 720, VideoCodec.VP9, AudioCodec.NONE, true));
-		FORMAT_MAP.put(248, new YoutubeFormat(248, "webm", 1080, VideoCodec.VP9, AudioCodec.NONE, true));
-		FORMAT_MAP.put(271, new YoutubeFormat(271, "webm", 1440, VideoCodec.VP9, AudioCodec.NONE, true));
-		FORMAT_MAP.put(313, new YoutubeFormat(313, "webm", 2160, VideoCodec.VP9, AudioCodec.NONE, true));
+		FORMAT_MAP.put(278, new YoutubeFormat(278, WEBM, 144, VideoCodec.VP9, AudioCodec.NONE, true));
+		FORMAT_MAP.put(242, new YoutubeFormat(242, WEBM, 240, VideoCodec.VP9, AudioCodec.NONE, true));
+		FORMAT_MAP.put(243, new YoutubeFormat(243, WEBM, 360, VideoCodec.VP9, AudioCodec.NONE, true));
+		FORMAT_MAP.put(244, new YoutubeFormat(244, WEBM, 480, VideoCodec.VP9, AudioCodec.NONE, true));
+		FORMAT_MAP.put(247, new YoutubeFormat(247, WEBM, 720, VideoCodec.VP9, AudioCodec.NONE, true));
+		FORMAT_MAP.put(248, new YoutubeFormat(248, WEBM, 1080, VideoCodec.VP9, AudioCodec.NONE, true));
+		FORMAT_MAP.put(271, new YoutubeFormat(271, WEBM, 1440, VideoCodec.VP9, AudioCodec.NONE, true));
+		FORMAT_MAP.put(313, new YoutubeFormat(313, WEBM, 2160, VideoCodec.VP9, AudioCodec.NONE, true));
 		
-		FORMAT_MAP.put(302, new YoutubeFormat(302, "webm", 720, VideoCodec.VP9, 60, AudioCodec.NONE, true));
-		FORMAT_MAP.put(308, new YoutubeFormat(308, "webm", 1440, VideoCodec.VP9, 60, AudioCodec.NONE, true));
-		FORMAT_MAP.put(303, new YoutubeFormat(303, "webm", 1080, VideoCodec.VP9, 60, AudioCodec.NONE, true));
-		FORMAT_MAP.put(315, new YoutubeFormat(315, "webm", 2160, VideoCodec.VP9, 60, AudioCodec.NONE, true));
+		FORMAT_MAP.put(302, new YoutubeFormat(302, WEBM, 720, VideoCodec.VP9, 60, AudioCodec.NONE, true));
+		FORMAT_MAP.put(308, new YoutubeFormat(308, WEBM, 1440, VideoCodec.VP9, 60, AudioCodec.NONE, true));
+		FORMAT_MAP.put(303, new YoutubeFormat(303, WEBM, 1080, VideoCodec.VP9, 60, AudioCodec.NONE, true));
+		FORMAT_MAP.put(315, new YoutubeFormat(315, WEBM, 2160, VideoCodec.VP9, 60, AudioCodec.NONE, true));
 		
 		/* WEBM Dash Audio */
-		FORMAT_MAP.put(171, new YoutubeFormat(171, "webm", VideoCodec.NONE, AudioCodec.VORBIS, 128, true));
+		FORMAT_MAP.put(171, new YoutubeFormat(171, WEBM, VideoCodec.NONE, AudioCodec.VORBIS, 128, true));
 		
-		FORMAT_MAP.put(249, new YoutubeFormat(249, "webm", VideoCodec.NONE, AudioCodec.OPUS, 48, true));
-		FORMAT_MAP.put(250, new YoutubeFormat(250, "webm", VideoCodec.NONE, AudioCodec.OPUS, 64, true));
-		FORMAT_MAP.put(251, new YoutubeFormat(251, "webm", VideoCodec.NONE, AudioCodec.OPUS, 160, true));
+		FORMAT_MAP.put(249, new YoutubeFormat(249, WEBM, VideoCodec.NONE, AudioCodec.OPUS, 48, true));
+		FORMAT_MAP.put(250, new YoutubeFormat(250, WEBM, VideoCodec.NONE, AudioCodec.OPUS, 64, true));
+		FORMAT_MAP.put(251, new YoutubeFormat(251, WEBM, VideoCodec.NONE, AudioCodec.OPUS, 160, true));
 		
 		/* HLS Live Stream */
 		FORMAT_MAP.put(91, new YoutubeFormat(91, "mp4", 144, VideoCodec.H264, AudioCodec.AAC, 48, false, true));

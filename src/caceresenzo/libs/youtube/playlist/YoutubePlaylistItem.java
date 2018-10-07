@@ -10,6 +10,7 @@ public class YoutubePlaylistItem implements Kindable {
 	
 	/* Constants */
 	public static final String KIND = "youtube#playlistItem";
+	public static final String BASE_YOUTUBE_URL = "https://www.youtube.com/watch?v=";
 	
 	public static final int NO_POSITION = -1;
 	
@@ -25,13 +26,29 @@ public class YoutubePlaylistItem implements Kindable {
 	public static final String JSON_KEY_DATA_RESSOURCE_ID_VIDEO_ID = "videoId";
 	
 	/* Variables */
+	private final String videoId;
 	private final VideoMeta videoMeta;
 	private final int position;
 	
 	/* Constructor */
-	private YoutubePlaylistItem(VideoMeta videoMeta, int position) {
+	private YoutubePlaylistItem(String videoId, VideoMeta videoMeta, int position) {
+		this.videoId = videoId;
 		this.videoMeta = videoMeta;
 		this.position = position;
+	}
+	
+	/**
+	 * @return Video Id
+	 */
+	public String getVideoId() {
+		return videoId;
+	}
+	
+	/**
+	 * @return Youtube Video Url ({@value #BASE_YOUTUBE_URL})
+	 */
+	public String getVideoUrl() {
+		return BASE_YOUTUBE_URL + videoId;
 	}
 	
 	/**
@@ -85,7 +102,7 @@ public class YoutubePlaylistItem implements Kindable {
 		
 		VideoMeta videoMeta = new VideoMeta(videoId, title, description, null, channelTitle, VideoMeta.NO_VIDEO_LENGTH, VideoMeta.NO_VIEW_COUNT, thumbnails);
 		
-		return new YoutubePlaylistItem(videoMeta, position);
+		return new YoutubePlaylistItem(videoId, videoMeta, position);
 	}
 	
 }

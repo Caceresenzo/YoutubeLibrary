@@ -87,6 +87,10 @@ public abstract class YouTubeExtractor {
 	
 	private ScriptEngine engine;
 	
+	public YouTubeExtractor() {
+		this("./cache/");
+	}
+	
 	public YouTubeExtractor(String cacheDir) {
 		ScriptEngineManager factory = new ScriptEngineManager();
 		engine = factory.getEngineByName("JavaScript");
@@ -561,8 +565,6 @@ public abstract class YouTubeExtractor {
 		if (matcher.find()) {
 			title = URLDecoder.decode(matcher.group(1), "UTF-8");
 		}
-		
-		Logger.info(">> " + getVideoInfo);
 		
 		matcher = patHlsvp.matcher(getVideoInfo);
 		if (matcher.find()) {
