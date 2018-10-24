@@ -6,7 +6,6 @@ import java.util.regex.Pattern;
 
 import caceresenzo.libs.json.JsonArray;
 import caceresenzo.libs.json.JsonObject;
-import caceresenzo.libs.logger.Logger;
 import caceresenzo.libs.youtube.common.InvalidKindException;
 import caceresenzo.libs.youtube.common.Kindable;
 
@@ -18,7 +17,7 @@ import caceresenzo.libs.youtube.common.Kindable;
 public class YoutubePlaylist implements Kindable {
 	
 	/* Constants */
-	public static final Pattern PLAYLIST_ID_MATCHER = Pattern.compile("^.*?(?:v|list)=(.*?)(?:&|$)");
+	public static final Pattern PLAYLIST_ID_MATCHER = Pattern.compile("^.*?list=(.*?)(?:&|$)");
 	
 	public static final String KIND = "youtube#playlistItemListResponse";
 	

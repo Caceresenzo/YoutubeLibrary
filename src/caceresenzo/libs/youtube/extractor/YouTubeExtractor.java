@@ -678,7 +678,7 @@ public abstract class YouTubeExtractor {
 		}
 		stb.append("};decipher();");
 		
-		Logger.info(stb.toString());
+		// Logger.info(stb.toString());
 		
 		lock.lock();
 		try {
